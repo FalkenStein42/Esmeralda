@@ -3,6 +3,7 @@ output_cards/
 images/
 backup/
 *.xlsx
+*.backup
 token.json
 credentials.json
 

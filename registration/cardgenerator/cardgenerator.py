@@ -19,7 +19,7 @@ def register_font(ttf_file:Path):
     pdfmetrics.registerFont(TTFont(font_name, ttf_file))
 
 if os.name == 'nt':  # Windows
-    RESOURCES = Path(r'F:\TarjetasPlazoleta\codebase\registration\cardgenerator\resources')
+    RESOURCES = Path(r'F:\TarjetasPlazoleta\Esmeralda\registration\cardgenerator\resources')
 elif os.name == 'posix': # Linux
     RESOURCES = Path(r'/run/media/steve/Data/TarjetasPlazoleta/Esmeralda/registration/cardgenerator/resources')
 else:
