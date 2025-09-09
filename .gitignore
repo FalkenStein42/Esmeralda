@@ -1,3 +1,12 @@
+#User-defined
+output_cards/
+images/
+backup/
+*.xlsx
+token.json
+credentials.json
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -205,3 +214,5 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+credentials.json
+token.json
