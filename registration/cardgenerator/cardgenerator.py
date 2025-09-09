@@ -8,7 +8,7 @@ from reportlab.platypus import Paragraph
 from uuid import UUID
 from typing import Literal
 from dataclasses import dataclass
-
+import os
 
 @dataclass
 class CardOptions:
@@ -18,10 +18,13 @@ def register_font(ttf_file:Path):
     font_name= ttf_file.name.removesuffix(ttf_file.suffix)
     pdfmetrics.registerFont(TTFont(font_name, ttf_file))
 
+if os.name == 'nt':  # Windows
+    RESOURCES = Path(r'F:\TarjetasPlazoleta\codebase\registration\cardgenerator\resources')
+elif os.name == 'posix': # Linux
+    RESOURCES = Path(r'/run/media/steve/Data/TarjetasPlazoleta/Esmeralda/registration/cardgenerator/resources')
+else:
+    RESOURCES = Path(__file__).parent / 'resources'
 
-#RESOURCES = Path('/run/media/steve/Data/TarjetasPlazoleta/codebase/registration/cardgenerator/resources')
-#RESOURCES = Path('/home/steve/Projects/TarjetasPlazoleta/codebase/registration/cardgenerator/resources')
-RESOURCES = Path(r'F:\TarjetasPlazoleta\codebase\registration\cardgenerator\resources')
 FONTS = [ 
     RESOURCES / 'Roboto_Mono' / 'static' / 'RobotoMono-Medium.ttf',
     RESOURCES / 'Inter' / 'extras' / 'ttf' / 'Inter-ExtraBold.ttf',
