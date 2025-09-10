@@ -217,3 +217,4 @@ marimo/_lsp/
 __marimo__/
 credentials.json
 token.json
+.~lock.database.xlsx#
